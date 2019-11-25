@@ -1,22 +1,32 @@
 .App {
   text-align: center;
+  height: 80vh;
 }
 
-.App-logo {
-  height: 40vmin;
+
+.rbc-time-view 
+  .rbc-label {
+  display: none;
+  }
+  .rbc-allday-cell {
+  height: calc(100vh - 98px);
+  max-height: unset;
+  }
+  .rbc-time-content {
+  display: none;
+  }
+
+
+.rbc-current-time-indicator {
+  display: none;
+}
+.rbc-time-column .rbc-timeslot-group{
+  border-bottom: none;
+}
+.rbc-timeslot-group .rbc-time-slot{
+  border-top: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.rbc-time-content{
+  border-top:none;
 }

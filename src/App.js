@@ -1,24 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Calendar, momentLocalizer} from 'react-big-calendar'
+import moment from 'moment'
 import './App.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+moment.locale('en')
+const localizer = momentLocalizer(moment)
+const myEventsList=[
+  {
+    title: "test",
+    start: new Date(2019,10,24),
+    end: new Date(2019,10,24),
+    allDay: true
+  },
+  {
+    title: "test2",
+    start: new Date(2019,10,25),
+    end: new Date(2019,10,25),
+    allDay: true
+  },
+  {
+    title: "test3",
+    start: new Date(2019,10,25),
+    end: new Date(2019,10,25),
+    allDay: true
+  }
+]
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Calendar 
+    localizer={localizer}
+    hideGutter
+    hideTimeIndicator
+    step={60}
+    showMultiDayTimes
+    events={myEventsList}
+    getNow={()=>new Date()}
+    views={['week','month']}
+    
+    />
+     
     </div>
   );
 }

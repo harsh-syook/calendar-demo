@@ -10,7 +10,8 @@
   }
   .rbc-allday-cell {
   height: calc(100vh - 98px);
-  max-height: unset;
+  max-height: 80vh;
+  overflow: auto;
   }
   
 
